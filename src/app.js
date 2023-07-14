@@ -13,31 +13,45 @@ const [toDo, setToDo] = useState([
 ]);
 
  // temp state
+ ///////////////////////
  const [newTask, setNewTask] = useState('');
  const [updateData, setUpdateData ] = useState('');
 
  //Add task
+ //////////////////////
  const addTask = () => {
 
  }
+
 // delete task
+/////////////////////////
  const deleteTask = (id) => {
     
  }
+
  // mark task as done or completed
+ ///////////////////////////
  const markDone = (id) => {
     
  }
+
  // cancel Update
+//////////////////////
  const cancelUpdate = () => {
     
  }
 
  // change task for update
- const changeTask = () => {
+ //////////////////////
+ const changeTask = (e) => {
     
  }
 
+  // update task
+  /////////////////////
+ const updateTask = (e) => {
+    
+}
 
 
 
