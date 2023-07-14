@@ -73,7 +73,7 @@ const [toDo, setToDo] = useState([
                             <div className="col taskBg">
 
                                 <div className={task.status ? 'done' : ''}>
-                                    <span className="taskText">{index + 1}</span>
+                                    <span className="taskNumber">{index + 1}</span>
                                     <span className="taskText">{task.title}</span>
                                 </div>
 
