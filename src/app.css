@@ -6,3 +6,18 @@ body {
 .App {
     text-align: center;
 }
+
+.taskBg {
+    background-color: darkgray;
+    border-radius: 6px;
+    padding: 10px 140px 10px 15px;
+    text-align: left;
+    font-size: 22px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.taskBg .done .taskText {
+    text-decoration: line-through;
+    opacity: 0.3;
+}
