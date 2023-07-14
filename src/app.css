@@ -17,6 +17,11 @@ body {
     margin-bottom: 20px;
 }
 
+.taskBg div {
+    display: flex;
+    align-items: center;
+}
+
 .taskNumber {
     color: rgb(104, 116, 116);
     border: 1px solid rgb(99, 94, 94);
@@ -34,4 +39,5 @@ body {
 .taskBg .done .taskText {
     text-decoration: line-through;
     opacity: 0.3;
+    flex: 1;
 }

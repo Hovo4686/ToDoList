@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { fontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleCheck, faPen, faTrashCan} from '@fortawesome/free-solid-svg-icons'
 import './app.css'
 
@@ -75,6 +75,19 @@ const [toDo, setToDo] = useState([
                                 <div className={task.status ? 'done' : ''}>
                                     <span className="taskNumber">{index + 1}</span>
                                     <span className="taskText">{task.title}</span>
+                                </div>
+
+                                <div className="iconsWrap">
+                                    <span>
+                                        <FontAwesomeIcon  icon={faCircleCheck}/>
+                                    </span>
+                                    <span>
+                                        <FontAwesomeIcon  icon={faPen} />
+                                    </span>
+                                    <span>
+                                        <FontAwesomeIcon  icon={faTrashCan} />
+                                    </span>
+                                   
                                 </div>
 
                             </div>
