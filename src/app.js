@@ -21,12 +21,20 @@ const [toDo, setToDo] = useState([
  //Add task
  //////////////////////
  const addTask = () => {
+    if(newTask) {
+        let num = toDo.length + 1;
+        let newEntry = {id: num, title: newTask, status: false}
+        setToDo([...toDo, newEntry])
+        setNewTask('');
+    }
 
  }
 
 // delete task
 /////////////////////////
  const deleteTask = (id) => {
+  let newTasks = toDo.filter(task => task.id !== id)
+  setToDo(newTasks);
     
  }
 
@@ -62,6 +70,44 @@ const [toDo, setToDo] = useState([
             <h2> To Do List App</h2>
             <br></br>
 
+            {/* update  task*/}
+            <div className="row">
+                <div className="col">
+                    <input
+                        className="form-control form-control-lg"
+                    />
+                </div>
+                <div className="col-auto">
+                    <button className="btn btn-lg btn-success mr-20">
+                        Update
+                    </button>
+                    <button className="btn btn-lg btn-warning">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+            <br />
+
+
+            {/* add task */}
+            <div className="row">
+                <div className="col">
+                    <input  
+                        value={newTask}
+                        onChange={ (e) => setNewTask(e.target.value)}
+                        className="form-control form-control-lg"
+                     />
+                </div>
+                <div className="col-auto">
+                    <button 
+                        onClick={addTask}
+                        className="btn btn-lg btn-success">
+                            Add Task
+                    </button>
+                </div>
+            </div>
+            <br />
+
             {/* display todo */}
             {/* this code run when tasks absence */}
             {toDo && toDo.length ? '' : 'No Tasks....'} 
@@ -84,7 +130,9 @@ const [toDo, setToDo] = useState([
                                     <span title="Edit">
                                         <FontAwesomeIcon  icon={faPen} />
                                     </span>
-                                    <span title="Delete">
+                                    <span title="Delete"
+                                        onClick={() => deleteTask(task.id)}
+                                    >
                                         <FontAwesomeIcon  icon={faTrashCan} />
                                     </span>
                                    
