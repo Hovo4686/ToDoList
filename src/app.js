@@ -10,6 +10,7 @@ function App() {
 const [toDo, setToDo] = useState([
      {'id': 1, 'title': 'task 1', 'status': false },
      {'id': 2, 'title': 'task 2', 'status': false },
+    
 ]);
 
  // temp state
@@ -66,25 +67,24 @@ const [toDo, setToDo] = useState([
             {toDo && toDo.length ? '' : 'No Tasks....'} 
 
             {toDo && toDo 
+                .sort((a, b) => a.id > b.id ? 1 : -1) // when changing object places (1,2obj) do not change their places in page
                   .map( (task, index) =>{
                     return(
                         <React.Fragment key={task.id}>
 
                             <div className="col taskBg">
-
                                 <div className={task.status ? 'done' : ''}>
                                     <span className="taskNumber">{index + 1}</span>
                                     <span className="taskText">{task.title}</span>
                                 </div>
-
                                 <div className="iconsWrap">
-                                    <span>
+                                    <span title="Completed /Not Completed"> 
                                         <FontAwesomeIcon  icon={faCircleCheck}/>
                                     </span>
-                                    <span>
+                                    <span title="Edit">
                                         <FontAwesomeIcon  icon={faPen} />
                                     </span>
-                                    <span>
+                                    <span title="Delete">
                                         <FontAwesomeIcon  icon={faTrashCan} />
                                     </span>
                                    
